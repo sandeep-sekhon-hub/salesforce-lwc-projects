@@ -1,0 +1,14 @@
+.alert-title {
+    color: #ba0517;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.alert-banner {
+    background-color: #fff7e6;
+    border: 1px solid #f5c26b;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,44 @@
+<template>
+    <template if:true={isThirdPartyPayer}>
+        <lightning-card>
+            <div class="slds-p-horizontal_small">
+                <h2 class="alert-title">Third Party Payer Alert</h2>
+            </div>
+
+            <div class="slds-p-around_small">
+                <div class="alert-banner">
+                    <lightning-icon
+                        icon-name="utility:warning"
+                        size="small"
+                        alternative-text="Warning">
+                    </lightning-icon>
+
+                    <span class="slds-m-left_small">
+                        <strong>{bannerMessage}</strong>
+                    </span>
+                </div>
+
+                <div class="slds-m-top_small">
+                    <template for:each={policies} for:item="policy">
+                        <div
+                            key={policy.policyId}
+                            class="slds-box slds-m-bottom_small">
+                            <p>
+                                <strong>Policy: </strong>
+                                <a href={policy.policyUrl}>{policy.policyNumber}
+                                </a>
+                            </p>
+                            <p>
+                                <strong>Policyholder: </strong>{policy.policyholderName}
+                            </p>
+                            <p>
+                                <strong>Status: </strong>{policy.status}
+                            </p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </lightning-card>
+
+    </template>
+</template>
