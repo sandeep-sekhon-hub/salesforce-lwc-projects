@@ -10,6 +10,8 @@ export default class PowerOfAttorneyMembers extends LightningElement {
 
     @wire(getPoaMembers, { poaAccountId: '$recordId' })
     wiredMembers({ error, data }) {
+
+        console.log('WE are in POA');
         if (data) {
             this.members = data.map(member => ({
                 ...member,
@@ -20,6 +22,7 @@ export default class PowerOfAttorneyMembers extends LightningElement {
             this.error = error;
             this.members = [];
             console.error('Error retrieving POA members:', error);
+            console.log('POA MEMBERS:', JSON.stringify(this.members));
         }
     }
 
