@@ -10,8 +10,8 @@ public with sharing class POAMembersController {
         return [
             SELECT Id,
                    Name,
-                   AccountNumber,
-                   PersonEmail
+                   PersonBirthDate, 
+                   BillingPostalCode
             FROM Account
             WHERE Power_of_Attorney__c = :poaAccountId
             AND IsPersonAccount = true

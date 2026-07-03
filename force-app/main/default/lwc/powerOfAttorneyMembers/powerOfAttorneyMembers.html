@@ -1,0 +1,45 @@
+<template>
+    <template if:true={hasPoaMembers}>
+        <lightning-card>
+            <div class="slds-p-horizontal_small">
+                <h2 class="alert-title">Power of Attorney Alert</h2>
+            </div>
+
+            <div class="slds-p-around_small">
+                <div class="alert-banner">
+                    <lightning-icon
+                        icon-name="utility:warning"
+                        size="small"
+                        alternative-text="Power of Attorney">
+                    </lightning-icon>
+
+                    <span class="slds-m-left_small">
+                        <strong>
+                            This Person is registered as a Power of Attorney for the following member(s).
+                        </strong>
+                    </span>
+                </div>
+
+                <div class="slds-m-top_small">
+                    <template for:each={members} for:item="member">
+
+                        <div
+                            key={member.Id}
+                            class="slds-box slds-m-bottom_small">
+
+                            <p> <strong>Member: </strong> <a href={member.recordUrl}> {member.PersonBirthDate} </a>
+                            </p>
+                            <p> <strong>Birth Date: </strong> {member.PersonBirthDate} </p> 
+                            <p>
+                                <strong>Post Code: </strong>{member.BillingPostalCode}
+                            </p>
+
+                        </div>
+
+                    </template>
+                </div>
+
+            </div>
+        </lightning-card>
+    </template>
+</template>
